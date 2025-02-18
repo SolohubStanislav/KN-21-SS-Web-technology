@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff9100;
+    text-align: center;
+    padding: 13px;
+    animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+      color: red;
+    }
+    25% {
+      color: aqua;
+    }
+    50% {
+      color: yellow;
+    }
+    75% {
+      color: green;
+    }
+    100% {
+      color: blue;
+    }
+  }
+
+h1 {
+    font-size: 1.3em;
+}
+
+h2 {
+    color: #ff9100;
+    margin-top: 13px;
+    text-align: left;
+}
+
+p {
+    line-height: 1.6;
+    margin: 13px 0;
+    text-align: center;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 13px;
+    text-align: center;
+}
+
+blockquote {
+    color: #131313;
+    padding: 13px;
+    text-align: right;
+}
