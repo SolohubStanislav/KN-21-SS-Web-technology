@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота 4: Вступ до JavaScript</title>
+</head>
+<body>
+  <h1>Лабораторна робота 4: Вступ до JavaScript</h1>
+  
+  <script>
+
+    // Завдання 1: Привітання користувача
+        console.log("Завдання 1.");
+        let userName = prompt("Як тебе звати?") || "незнайомцю";
+        alert(`Привіт, ${userName}! Радий тебе бачити!`);
+        console.log(`Привіт, ${userName}! Радий тебе бачити!`);
+    // Завдання 2: Проста арифметика
+        console.log("Завдання 2.")
+        let num1 = parseFloat(prompt("Введіть перше число:"));
+        let num2 = parseFloat(prompt("Введіть друге число:"));
+
+        let sum = num1 * num2;
+        let quotient = num2 !== 0 ? num1 / num2 : "Ділення на нуль неможливе";
+        let result = `Добуток: ${sum}\nЧастка: ${quotient}`;
+
+        alert(result);
+        console.log(result);
+
+    // Завдання 3: Вік користувача
+        console.log("Завдання 3.");
+
+        let userYear = prompt("Введіть свій рік народження:");
+        let currentYear = 2025;
+        let userAge = currentYear - userYear;
+
+        const myAge = 19;
+        let ageDifference = Math.abs(myAge - userAge);
+
+        if (userAge > myAge) {
+            alert(`${userName} Ваш вік: ${userAge}. Ви старші за мене на ${ageDifference} років.`);
+        } else if (userAge < myAge) {
+            alert(`${userName} Ваш вік: ${userAge}. Ви молодші за мене на ${ageDifference} років.`);
+        } else {
+            alert(`${userName} Ваш вік: ${userAge}. Нам однаково років!`);
+        }
+    
+  </script>
+</body>
+</html>
