@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .gender-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Форма реєстрації</h2>
+        <form id="registrationForm">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" required>
+            <span class="error" id="nameError"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <span class="error" id="emailError"></span>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" minlength="6" required>
+            <span class="error" id="passwordError"></span>
+
+            <label for="confirmPassword">Повторіть пароль:</label>
+            <input type="password" id="confirmPassword" required>
+            <span class="error" id="confirmPasswordError"></span>
+
+            <label for="age">Вік:</label>
+            <input type="number" id="age" min="10" required>
+            <span class="error" id="ageError"></span>
+
+            <label for="group">Група студентів:</label>
+            <select id="group" required>
+                <option value="">Оберіть групу</option>
+                <option value="IT-101">IT-101</option>
+                <option value="IT-102">IT-102</option>
+                <option value="IT-103">IT-103</option>
+                <option value="IT-104">IT-104</option>
+            </select>
+            <span class="error" id="groupError"></span>
+
+            <button type="submit">Зареєструватися</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let valid = true;
+
+            let name = document.getElementById("name").value.trim();
+            if (name === "") {
+                valid = false;
+                document.getElementById("nameError").textContent = "Поле обов'язкове";
+            } else {
+                document.getElementById("nameError").textContent = "";
+            }
+
+            let email = document.getElementById("email").value;
+            if (!email.includes("@")) {
+                valid = false;
+                document.getElementById("emailError").textContent = "Невірний формат email";
+            } else {
+                document.getElementById("emailError").textContent = "";
+            }
+
+            let password = document.getElementById("password").value;
+            if (password.length < 6) {
+                valid = false;
+                document.getElementById("passwordError").textContent = "Пароль має містити мінімум 6 символів";
+            } else {
+                document.getElementById("passwordError").textContent = "";
+            }
+
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            if (password !== confirmPassword) {
+                valid = false;
+                document.getElementById("confirmPasswordError").textContent = "Паролі не співпадають";
+            } else {
+                document.getElementById("confirmPasswordError").textContent = "";
+            }
+
+            let age = document.getElementById("age").value;
+            if (age < 10) {
+                valid = false;
+                document.getElementById("ageError").textContent = "Вік має бути 10+";
+            } else {
+                document.getElementById("ageError").textContent = "";
+            }
+
+            let genderSelected = document.querySelector("input[name='gender']:checked");
+            if (!genderSelected) {
+                valid = false;
+                document.getElementById("genderError").textContent = "Виберіть стать";
+            } else {
+                document.getElementById("genderError").textContent = "";
+            }
+
+            let group = document.getElementById("group").value;
+            if (group === "") {
+                valid = false;
+                document.getElementById("groupError").textContent = "Оберіть групу";
+            } else {
+                document.getElementById("groupError").textContent = "";
+            }
+
+            if (valid) {
+                alert("Реєстрація успішна!");
+            }
+        });
+    </script>
+</body>
+</html>
