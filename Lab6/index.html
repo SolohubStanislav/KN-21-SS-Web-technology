@@ -141,14 +141,6 @@
                 document.getElementById("ageError").textContent = "";
             }
 
-            let genderSelected = document.querySelector("input[name='gender']:checked");
-            if (!genderSelected) {
-                valid = false;
-                document.getElementById("genderError").textContent = "Виберіть стать";
-            } else {
-                document.getElementById("genderError").textContent = "";
-            }
-
             let group = document.getElementById("group").value;
             if (group === "") {
                 valid = false;
