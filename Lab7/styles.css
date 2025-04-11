@@ -1,0 +1,86 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.button {
+    background-color: orange;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.button:hover {
+    background-color: blueviolet;
+}
+
+.button:active {
+    transform: scale(1.25);
+}
+
+.content-wrapper {
+    overflow: hidden;
+    max-height: 40px;
+    transition: max-height 1s ease;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.content-wrapper:hover {
+    max-height: 200px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    position: relative;
+    animation: moveBox 2s linear infinite alternate;
+    margin-bottom: 20px;
+}
+
+@keyframes moveBox {
+    0% { left: 0px; }
+    100% { left: 200px; }
+}
+
+#moveBtn {
+    background-color: orange;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    margin-bottom: 20px;
+}
+#moveBtn:hover {
+    background-color: blueviolet;
+}
+
+#moveBtn:active {
+    transform: scale(1.25);
+}
+.circle {
+    width: 60px;
+    height: 60px;
+    background-color: purple;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 20px;
+}
+
+@keyframes moveCircle {
+    0% { left: 0; }
+    50% { left: 150px; }
+    100% { left: 0; }
+}
